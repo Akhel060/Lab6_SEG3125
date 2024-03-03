@@ -1,0 +1,104 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    padding: 0; 
+    color: #333;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: auto; 
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title h1, .container h1 {
+    color: #333;
+    text-align: center;
+}
+
+a, .results-link, .return-link {
+    color: #06c;
+    text-decoration: none;
+}
+
+a:hover, .results-link:hover, .return-link:hover {
+    color: #004085;
+}
+
+form {
+    display: grid;
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 800px; 
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="checkbox"], input[type="radio"], input[type="text"], select {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+textarea, select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button, .results-link, .return-link {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto; 
+    text-align: center;
+}
+
+button:hover, .results-link:hover, .return-link:hover {
+    background: #218838;
+}
+
+#website-ui {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#ui-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#signature {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #333;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <link rel="stylesheet" href="styles/results_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="survey-return">
+        <a href="index.html" class="return-link">Return to Survey</a>
+    </div>
+
+    <h1>Survey Results</h1>
+    <div id="results-container"></div>
+
+    <script>
+        fetch('/api/survey-results')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('results-container');
+                data.forEach((response, index) => {
+                    const responseDiv = document.createElement('div');
+                    responseDiv.className = 'response';
+
+                    const title = document.createElement('h2');
+                    title.textContent = `Response ${index + 1}`;
+                    responseDiv.appendChild(title);
+
+                    Object.keys(response).forEach(key => {
+                        const item = document.createElement('p');
+                        item.innerHTML = `<strong>${key}:</strong> ${response[key]}`;
+                        responseDiv.appendChild(item);
+                    });
+
+                    container.appendChild(responseDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching survey results:', error));
+    </script>
+</body>
+</html>
